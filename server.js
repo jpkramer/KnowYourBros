@@ -6,7 +6,8 @@ var http = require('http');
 var path = require('path');
 
 var config = require('./config');
-var routes = require('./routes/api');
+var webClientRoute = require('./routes/client');
+var webClientRoute = require('./routes/api');
 
 var app = express();
 
@@ -14,10 +15,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
+app.use('/', webClientRoute);
+app.use('/api/v1.0/', apiRoutes);
 
-// mongoose
 // mongoose.connect(config.db_url);
+// mongoose.connection.on('open', function() {
+//     console.log("Connected to Mongoose...");
+//    
+// });
 
 //---------------------------------------------------------------------------------
 //                             Server Boilerplate

@@ -1,0 +1,33 @@
+ <!-- public/views/index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <title>KnowYourBros</title>
+
+    <!--(if target dev)><!-->
+	<link rel="stylesheet" href="dist/css/base.css">
+	<link rel="stylesheet" href="dist/css/app.css">
+	<!--<!(endif)-->
+
+	<!--(if target prod)><!-->
+	<link rel="stylesheet" href="dist/css/style.min.css">
+	<!--<!(endif)-->
+
+</head>
+<body>
+
+	<div class="application"></div>
+    we did it!
+
+	<!--(if target dev)><!-->
+	<script src="dist/vendors.js"></script>
+	<script src="dist/app.js"></script>
+	<!--<!(endif)-->
+
+	<!--(if target prod)><!-->
+	<script src="dist/bundle.js"></script>
+	<!--<!(endif)-->
+
+</body>
+</html>
